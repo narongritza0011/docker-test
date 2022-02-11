@@ -11,4 +11,4 @@ RUN npm install -g forever
 COPY . .
 
 EXPOSE 3002
-CMD forever -c 'nodemon --exitcrash' server
+CMD forever -c 'nodemon --exitcrash' server.js

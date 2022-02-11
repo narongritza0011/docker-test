@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //home page route
 app.get("/", (req, res) => {
   return res.send({
-    error: true,
+    error: false,
     type: "ทดสอบ",
     message: "ยินดีต้อนรับสู่ Restful crud api with nodejs, express, Mysql",
     written_by: "dew",

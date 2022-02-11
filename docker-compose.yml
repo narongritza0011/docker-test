@@ -13,9 +13,9 @@ services:
       - ../../public:/data/public
       - ../../../shared:/shared
     ports:
-      - "3000:3000"
+      - "3002:3002"
     expose:
-      - 3000
+      - 3002
     environment:
       DEPLOY_RUNNER: ${CURRENT_UID:-1}
       APACHE_RUN_USER: "#${CURRENT_UID:-1}"

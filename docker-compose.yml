@@ -1,0 +1,25 @@
+version: '3'
+services:
+  dew:
+    image: dew
+    container_name: dew
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - .:/usr/src/dew
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ../../public:/data/public
+      - ../../../shared:/shared
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    environment:
+      DEPLOY_RUNNER: ${CURRENT_UID:-1}
+      APACHE_RUN_USER: "#${CURRENT_UID:-1}"
+networks:
+  default:
+    external:
+      name: staging_network
